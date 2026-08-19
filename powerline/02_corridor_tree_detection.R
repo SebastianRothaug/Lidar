@@ -47,7 +47,7 @@ dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 #(you could skip this part and just continue las = full AOI but speed will decrease)
 
 # buffer to define AOI
-buffered_line <- st_buffer(corridor, dist = 100) # 100m Corridor from Base Line
+buffered_line <- st_buffer(corridor, dist = 80) # 80m Corridor from Base Line
 
 # LAS clip
 # Transform buffer to the CRS of the LAS
