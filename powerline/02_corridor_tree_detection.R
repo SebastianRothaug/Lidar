@@ -14,7 +14,7 @@ library(sf)
 ####  Settings Input
 
 # ---- INPUT LAS/LAZ of the AOI -------------------------------------------------
-las_file <- "C:/Users/User/Desktop/Lidar_Course/lidar_holzkirchen.las"   # <-- change if needed
+las_file <- "powerline/data/i02_lidar_full_aoi.las"   # <-- change if needed
 # READ LAS --------------------------------------------------
 las <- readLAS(las_file)  
 st_crs(las) <- 25832
@@ -22,7 +22,7 @@ st_crs(las) <- 25832
 table(las$Classification)
 
 # ---- INPUT Line = Base Line for the Corridor -------------------------------------------------
-corridor <- st_read("C:/Users/User/Desktop/Lidar_Course/powerline_project/data/trassenlinie.gpkg") # <-- change if needed
+corridor <- st_read("powerline/data/i02_corridor_line.gpkg") # <-- change if needed
 #### ------------------
 
 
@@ -34,7 +34,7 @@ res_chm    <- 0.5   # cell size in metres (smaller -> more detail, larger RAM)
 res_dtm    <- 1.0   # DTM can be coarser - you decide
 
 # ---- output folder ---------------------------------------
-out_dir    <- "C:/Users/User/Desktop/Lidar_Course"
+out_dir    <- "powerline/data"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 #### ------------------
 
@@ -63,7 +63,7 @@ class(las_final)
 plot(las_final)
 
 # Save the clipped area of the AOI as LAS
-aoi_clip_file <- file.path(out_dir, "lidar_holzkirchen_clipped.las")
+aoi_clip_file <- file.path(out_dir, "02_lidar_aoi_clipped.las")
 writeLAS(las_final, aoi_clip_file)
 
 # redefine the las to the now smaller AOI in our environment
@@ -99,8 +99,8 @@ chm <- rasterize_canopy(las_norm,
 
 # SAVE RASTERS TO DISK
 
-dtm_file <- file.path(out_dir, "DTM.tif")
-chm_file <- file.path(out_dir, "CHM_TreeHeight.tif")
+dtm_file <- file.path(out_dir, "02_DTM.tif")
+chm_file <- file.path(out_dir, "02_CHM_TreeHeight.tif")
 
 writeRaster(dtm, filename = dtm_file,
             overwrite = TRUE, gdal = c("COMPRESS=LZW"))
@@ -204,9 +204,8 @@ keep_cols <- intersect(c("treeID", "dgm_height", "tree_height", "canopy_height")
                        names(ttops_out))
 ttops_out <- ttops_out[, keep_cols]
 
-## Save as GeoPackage Point Layer resampling tree with all 3 height information ------
-----
-gpkg_path <- file.path(out_dir, "tree_tops_EPSG25832.gpkg")
+## Save as GeoPackage Point Layer resampling tree with all 3 height information -----
+gpkg_path <- file.path(out_dir, "02_tree_tops_EPSG25832.gpkg")
 
 sf::st_write(
   obj          = ttops_out,
