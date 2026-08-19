@@ -5,7 +5,7 @@ library(ggplot2)
 library(tidyterra)   # fuer geom_spatraster() -> SpatRaster in ggplot darstellen
 
 # ---- Eingabe-Pfade (bitte anpassen) ---------------------------------------
-tiff_path <- "C:/Users/User/Desktop/Python_VS/output/leitungsdurchhang_gelaendemodell.tif"
+tiff_path <- "C:/Users/User/Desktop/Python_VS/output/leitungsdurchhang_hoehenmodell.tif"
 gpkg_path <- "C:/Users/User/Desktop/Lidar_Course/tree_tops_EPSG25832.gpkg"
 gpkg_layer <- NULL   # z.B. "tree_tops", falls mehrere Layer im GPKG vorhanden sind
 
@@ -13,9 +13,6 @@ out_gpkg_path <- file.path(
   dirname(gpkg_path),
   paste0(tools::file_path_sans_ext(basename(gpkg_path)), "_collision.gpkg")
 )
-
-if (!file.exists(tiff_path)) stop(paste("TIFF nicht gefunden:", tiff_path))
-if (!file.exists(gpkg_path)) stop(paste("GPKG nicht gefunden:", gpkg_path))
 
 # ---- 1) Baumpunkte einlesen -------------------------------------------------
 trees <- if (!is.null(gpkg_layer)) {
