@@ -72,7 +72,6 @@ las <- las_final
 #### ------------------
 
 
-
 ###2 Pointcloud Processing different Ground, Height Models
 
 ###2.1 GROUND CLASSIFICATION = DTM -------------------------------
