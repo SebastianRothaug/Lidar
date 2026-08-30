@@ -35,3 +35,6 @@ An automated workflow combining mathematical powerline modeling and LiDAR-based 
 
 * Processed (internal) data, created by the scripts - named with the script number it is exported from.
   * Some of this internally processed data is not a final product, but is required to initiate the next scripts.
+
+### Results:
+Resulting visualizations are located in the *results_visualization* folder and serve as documentation to help understand the workflow, the scripts, and their outputs. Since the scripts themselves are designed mainly for data processing, the visual representation of the results was handled externally using software like Cloud Compare (for .las files + 3D views) and QGIS.
