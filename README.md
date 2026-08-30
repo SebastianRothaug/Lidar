@@ -9,7 +9,7 @@ The repository is structured du to different projects
 
 **Script structure:**
 * **01_powerline_modeling.py**
-  * Modeling a powerline mathematically based on a symetrical parable calculation (2x pole location xyz + the zero point height; provided in CSV).
+  * Modeling a powerline mathematically based on a symetrical parable calculation (2x pole location xyz + the zero point height; provided in a initial CSV).
     Resulting in an output of a powerline height model representing the electricity cable.
 * **02_corridor_tree_detection.R**
   * Preprocessing of the poingt cloud - clipping the powerline corridor to minimize data size and increase computing performance.
