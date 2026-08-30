@@ -10,7 +10,7 @@ An automated workflow combining mathematical powerline modeling and LiDAR-based 
 
 ### My example data and project:
 * The LiDAR data I used in my example project is provided by "Bayerische Vermessungsverwaltung – www.geodaten.bayern.de" and is openly accessible.
-* **The project is fictionally created!** Neither is the AOI location involved in a real planning process, nor are administrative and legal factors (such as the Federal Land Utilization Ordinance) taken into account in this scenario.
+* **The project is fictionally created!** Neither is the AOI location involved in a real planning process, nor are administrative and legal factors (such as the Federal Land Utilization Ordinance) taken into account in this infrastructure planning scenario.
 
 ### Script structure:
 * **01_powerline_modeling.py**
