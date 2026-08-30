@@ -8,6 +8,10 @@ The repository is structured according to different projects.
 **Clearance Analysis for Powerline Planning - Forest Impact and Vegetation Cut-Off Analysis in Powerline Corridor** <br>
 An automated workflow combining mathematical powerline modeling and LiDAR-based tree detection to assess vegetation risks and calculate clearance requirements in utility corridors. By comparing individual tree heights against simulated cable sags, the project identifies critical collision zones and calculates the exact cut-off length or max. height needed for each tree to ensure infrastructure safety.
 
+### My example data and project:
+* The LiDAR data I used in my example project is provided by "Bayerische Vermessungsverwaltung – www.geodaten.bayern.de" and is openly accessible.
+* **The project is fictionally created!** Neither is the AOI location involved in a real planning process, nor are administrative and legal factors (such as the Federal Land Utilization Ordinance) taken into account in that scenario.
+
 ### Script structure:
 * **01_powerline_modeling.py**
   * Modeling a powerline mathematically based on a symmetrical parabola calculation (2x pole location xyz + the zero point height; provided in an initial CSV).
@@ -30,7 +34,3 @@ An automated workflow combining mathematical powerline modeling and LiDAR-based 
 
 * Processed (internal) data, created by the scripts - named with the script number it is exported from.
   * Some of this internally processed data is not a final product, but is required to initiate the next scripts.
-
-### My example data and project:
-* The LiDAR data I used in my example project is provided by "Bayerische Vermessungsverwaltung – www.geodaten.bayern.de" and is openly accessible.
-* **The project is fictionally created!** Neither is the AOI location involved in a real planning process, nor are administrative and legal factors (such as the Federal Land Utilization Ordinance) taken into account.
