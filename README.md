@@ -6,6 +6,7 @@ The repository is structured du to different projects
 
 ## Project: powerline
 **Clearance Analysis for Powerline Planning - Forest Impact and Vegetation Cut-Off Analysis in Powerline Corridor**
+Description Text
 
 **Script structure:**
 * **01_powerline_modeling.py**
@@ -21,6 +22,18 @@ The repository is structured du to different projects
 * **03_powerline_tree_collision**
   * Identification of critical collision, cut of length and max. tree height - by comparing the tree detection layer heights information (from 02) to the powerline height model (from 01). 
 
+**Data folder structure:**
+* **Initial (external) data**, to initiate the scripts - marked with: **i** + the script number needs to be implemented.
+  * **i01_powerline_location.csv** - CSV table of the pole locations (dt. Mast- bzw Spannfeldliste). *Each row representing a span between to poles with 2x pole location in xyz + the zero point height. Data and structure/nomenclature provided by the structural engineers (they calculate the zero point heiht based on materialistic varibels of the cable just as taking into account the physical factors like tractive power and span power)
+  * **i02_lidar_full_aoi.las** - LiDaR point cloud of the area of interest.  **!! due to data size issues that specific example dataset couldn't be uloaded to the repository (contact me or alternatively continue with the already clipped AOI file: 02_lidar_aoi_clipped.las !!**
+  * **i02_corridor_line.gpkg** - Line layer representing the base/middle line of the corridor for the tree detection.
+
+* Processed (internal) data, created by the scripts - named with the script number it is exported from.
+  * Some of these internal processed data is not a final product, but required to initiate the next scripts.
+
+**My example data and project:**
+* The data LiDaR data I used in my example project is provided by "Bayerische Vermessungsverwaltung – www.geodaten.bayern.de" and openly accessibly.
+* **The project is fictional created!** neither the AOI location is in a real planing involved nor adminatrative and legal factors (just as the Federal Land Utilization Ordinance) are taken into account.
 
 ## Requirements
 
